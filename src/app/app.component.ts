@@ -6,7 +6,9 @@ import { QuestionService } from './question.service';
   template: `
     <div class="main-container">
       <div class="content-container">
-        <dynamic-form [questions]="questions"></dynamic-form>
+        <div class="content-area">
+          <app-form-builder></app-form-builder>
+        </div>
       </div>
     </div>
   `,

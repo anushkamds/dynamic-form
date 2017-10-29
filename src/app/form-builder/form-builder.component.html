@@ -1,0 +1,106 @@
+<clr-dropdown>
+  <button type="button" clrDropdownTrigger>
+      <clr-icon shape="error" class="is-error" size="24"></clr-icon>
+      <clr-icon shape="caret down"></clr-icon>
+  </button>
+  <clr-dropdown-menu *clrIfOpen>
+      <label class="dropdown-header">Select one</label>
+      <button type="button" clrDropdownItem>Select</button>
+      <button type="button" clrDropdownItem>Text field</button>
+      <div class="dropdown-divider"></div>
+      <button type="button" clrDropdownItem>Link 1</button>
+      <button type="button" clrDropdownItem>Link 2</button>
+  </clr-dropdown-menu>
+</clr-dropdown>
+
+<form class="form" [formGroup]="employeeAddressForm" (ngSubmit)="onSubmit()" [hidden]="submitted">
+  <section class="form-block">
+      <div formGroupName="textBox">
+          <div class="form-group">
+              <label for="empName">Postal code</label>
+              <label for="empName"
+                  aria-haspopup="true"
+                  role="tooltip"
+                  class="tooltip tooltip-validation tooltip-sm"
+                  [class.invalid]="employeeAddressForm.get('textBox').get('name').invalid
+                      && (employeeAddressForm.get('textBox').get('name').dirty ||
+                      employeeAddressForm.get('textBox').get('name').touched)">
+                  <input id="empname" type="text"
+                      formControlName="name">
+                  <span class="tooltip-content">
+                      Postal code is required.
+                  </span>
+              </label>
+          </div>
+          <div class="form-group">
+              <label for="emptype">Type</label>
+              <label for="emptype"
+                  aria-haspopup="true"
+                  role="tooltip"
+                  class="tooltip tooltip-validation tooltip-sm"
+                  [class.invalid]="employeeAddressForm.get('textBox').get('type').invalid
+                      && (employeeAddressForm.get('textBox').get('type').dirty ||
+                      employeeAddressForm.get('textBox').get('type').touched)">
+                  <input id="emptype" type="text"
+                      formControlName="type">
+                  <span class="tooltip-content">
+                      type is required.
+                  </span>
+              </label>
+          </div>
+      </div>
+      <div formGroupName="select">
+        <div class="form-group">
+            <label for="empPost">Postal code</label>
+            <label for="empPost"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm"
+                [class.invalid]="employeeAddressForm.get('select').get('name').invalid
+                    && (employeeAddressForm.get('select').get('name').dirty ||
+                    employeeAddressForm.get('select').get('name').touched)">
+                <input id="empPost" type="text"
+                    formControlName="name">
+                <span class="tooltip-content">
+                    Postal code is required.
+                </span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="emptype">Type</label>
+            <label for="emptype"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm"
+                [class.invalid]="employeeAddressForm.get('select').get('type').invalid
+                    && (employeeAddressForm.get('select').get('type').dirty ||
+                    employeeAddressForm.get('select').get('type').touched)">
+                <input id="emptype" type="text"
+                    formControlName="type">
+                <span class="tooltip-content">
+                    type is required.
+                </span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="empOptionsToSelect">Type</label>
+            <label for="empOptionsToSelect"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-sm"
+                [class.invalid]="employeeAddressForm.get('select').get('optionsToSelect').invalid
+                    && (employeeAddressForm.get('select').get('optionsToSelect').dirty ||
+                    employeeAddressForm.get('select').get('optionsToSelect').touched)">
+                <input id="empOptionsToSelect" type="text"
+                    formControlName="type">
+                <span class="tooltip-content">
+                    type is required.
+                </span>
+            </label>
+        </div>
+    </div>
+      <button class="btn btn-primary"
+          type="submit"
+          [disabled]="employeeAddressForm.invalid">Add</button>
+  </section>
+</form>

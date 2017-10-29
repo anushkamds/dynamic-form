@@ -6,10 +6,12 @@ import { DynamicFormQuestionComponent } from './dynamic-form-question.component'
 
 import { ClarityModule } from "clarity-angular";
 import { AppComponent } from './app.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { FormElementComponent } from './form-element/form-element.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DynamicFormComponent, DynamicFormQuestionComponent
+    AppComponent, DynamicFormComponent, DynamicFormQuestionComponent, FormBuilderComponent, FormElementComponent
   ],
   imports: [
     BrowserModule,
