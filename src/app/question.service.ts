@@ -6,6 +6,7 @@ import { TextboxQuestion } from './question-textbox';
 
 @Injectable()
 export class QuestionService {
+  questionModels: any;
 
   // Todo: get from a remote source of question metadata
   // Todo: make asynchronous
@@ -49,5 +50,9 @@ export class QuestionService {
     ];
 
     return questions.sort((a, b) => a.order - b.order);
+  }
+
+  saveQuestions(questionModels: any) {
+    console.log(questionModels);
   }
 }
